@@ -14,17 +14,22 @@ public class Player : MonoBehaviour
     private float basicHp;
     [SerializeField]
     private Slider hpSlider;
+    private Animator animator = null;
+
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         jumpCount = 0;
         hp = basicHp;
+        animator = GetComponent<Animator>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Ground")
         {
             isGround = true;
+            animator.Play("Playermove");
             jumpCount = 2;
         }
     }
@@ -51,13 +56,21 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     rigidbody.AddForce(Vector2.up * jumpSpeed);
+                        animator.Play("jump2");
                     jumpCount--;
+                    if (jumpCount == 1)
+                    {
+                    animator.Play("jump");
+                        
+                    }
                 }
             }
         }
-        if(transform.position.y > 3)
+       
+        if (transform.position.y > 3)
         {
             transform.position = new Vector2(-6, 3);
+
         }
     }
     void UpdateUi()
