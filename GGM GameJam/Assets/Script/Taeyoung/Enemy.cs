@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Rigidbody2D rigidbody;
+    [SerializeField]
+    private float rpm;
+    [SerializeField]
+    private float jumpSpeed;
+    [SerializeField]
+    private GameObject bullet;
+    private bool isShoot;
     void Start()
     {
-        
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        
+        if(transform.position.x < 10 && isShoot == false)
+        {
+            isShoot = true;
+            StartCoroutine(Shoot());
+        }
+    }
+    IEnumerator Shoot()
+    {
+        while (true)
+        {
+            Instantiate(bullet, transform.localPosition, Quaternion.identity);
+            yield return new WaitForSeconds(rpm);
+        }
     }
 }

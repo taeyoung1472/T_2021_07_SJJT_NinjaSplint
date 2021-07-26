@@ -35,6 +35,12 @@ public class Player : MonoBehaviour
             hp--;
             UpdateUi();
         }
+        if(collision.transform.tag == "Bullet")
+        {
+            hp--;
+            Destroy(collision.gameObject);
+            UpdateUi();
+        }
     }
     private void Update()
     {

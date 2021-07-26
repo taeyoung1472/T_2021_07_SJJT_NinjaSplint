@@ -59,9 +59,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Taeyoung\Player.cs" />
     <Compile Include="Assets\Script\Taeyoung\ObjectMove.cs" />
     <Compile Include="Assets\Script\Taeyoung\Enemy.cs" />
+    <Compile Include="Assets\Script\Taeyoung\Player.cs" />
+    <Compile Include="Assets\Script\Taeyoung\BulletMove.cs" />
+    <Compile Include="Assets\Script\Taeyoung\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -341,7 +341,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/Script/Taeyoung/BulletMove.cs"
 "Assets/Script/Taeyoung/Enemy.cs"
+"Assets/Script/Taeyoung/GameManager.cs"
 "Assets/Script/Taeyoung/ObjectMove.cs"
 "Assets/Script/Taeyoung/Player.cs"
 -langversion:8.0
